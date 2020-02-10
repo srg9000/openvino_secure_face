@@ -35,11 +35,11 @@ def build_argparser():
 						 " on the face images, otherwise use full images.")
 
 	models = parser.add_argument_group('Models')
-	models.add_argument('-m_fd', metavar="PATH", default="F:/Semester 8/GeekyBee/Face_detection_improve/intel/face-detection-retail-0004/FP32/face-detection-retail-0004.xml",
+	models.add_argument('-m_fd', metavar="PATH", default="face-detection-retail-0004.xml",
 						help="Path to the Face Detection model XML file")
-	models.add_argument('-m_lm', metavar="PATH", default="F:/Semester 8/GeekyBee/Face_detection_improve/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml",
+	models.add_argument('-m_lm', metavar="PATH", default="landmarks-regression-retail-0009.xml",
 						help="Path to the Facial Landmarks Regression model XML file")
-	models.add_argument('-m_reid', metavar="PATH", default="F:/Semester 8/GeekyBee/Face_detection_improve/intel/face-reidentification-retail-0095/FP32/face-reidentification-retail-0095.xml",
+	models.add_argument('-m_reid', metavar="PATH", default="face-reidentification-retail-0095.xml",
 						help="Path to the Face Reidentification model XML file")
 
 	infer = parser.add_argument_group('Inference options')
@@ -52,7 +52,7 @@ def build_argparser():
 	infer.add_argument('-d_reid', default='CPU', choices=DEVICE_KINDS,
 					   help="(optional) Target device for the "
 					   "Face Reidentification model (default: %(default)s)")
-	infer.add_argument('-l', '--cpu_lib', metavar="PATH", default=r"F:\Program Files (x86)\IntelSWTools\openvino_2019.3.379\deployment_tools\inference_engine\bin\intel64\Release\cpu_extension_avx2.dll",
+	infer.add_argument('-l', '--cpu_lib', metavar="PATH", default=r"cpu_extension_avx2.dll",
 					   help="(optional) For MKLDNN (CPU)-targeted custom layers, if any. "
 					   "Path to a shared library with custom layers implementations")
 	infer.add_argument('-c', '--gpu_lib', metavar="PATH", default="",
